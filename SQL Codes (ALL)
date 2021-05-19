@@ -1,0 +1,17 @@
+SELECT Presenter.PresenterID, Presenter.FirstName, Presenter.LastName, Presenter.Profession, Presenter.Phone
+FROM Presenter
+ORDER BY Presenter.PresenterID;
+___________________________________________________________________________________________________________________________________________________________________
+SELECT Attendee.FirstName, Attendee.LastName, Attendee.Phone, Event.EventDate
+FROM Attendee INNER JOIN (Event INNER JOIN Attendance ON Event.EventID = Attendance.EventID) ON Attendee.AttendeeID = Attendance.AttendeeID;
+___________________________________________________________________________________________________________________________________________________________________
+SELECT Event.EventDate, Event.PeopleAmount, Event.EventID
+FROM Attendee INNER JOIN (Event INNER JOIN Attendance ON Event.EventID = Attendance.EventID) ON Attendee.AttendeeID = Attendance.AttendeeID;
+____________________________________________________________________________________________________________________________________________________________________
+SELECT Event.EventDate, Presentation.Topic, Presentation.EventID, Presentation.PresentationID
+FROM Presentation INNER JOIN Event ON Presentation.PresentationID = Event.PeopleAmount;
+____________________________________________________________________________________________________________________________________________________________________
+SELECT *
+FROM Attendee
+UNION ALL SELECT *
+FROM Registration;
